@@ -1,0 +1,82 @@
+			======  ASSIGNMENT 3 ======
+
+1.
+
+2.
+-->SELECT * FROM emp ORDER BY Deptno ASC
+-->SELECT * FROM emp ORDER BY Deptno DESC
+
+3.
+-->SELECT DISTINCT Job FROM emp ORDER BY Job DESC
+
+4.
+-->SELECT * FROM emp WHERE Hiredate(1981-01-01);
+
+5.
+-->SELECT Empno,Ename,Sal,Sal/30,12*Sal FROM emp ORDER BY Sal ASC
+
+6.
+-->SELECT Empno,Ename,Sal FROM emp WHERE Mgr='7369'
+
+7.
+-->SELECT * FROM emp WHERE comm>Sal
+
+8.
+-->SELECT * FROM emp WHERE job='CLERK' OR job='ANALYST' ORDER BY job DESC
+
+9.
+-->SELECT Ename FROM emp WHERE 12*Sal BETWEEN 22000 AND 45000
+
+10.
+-->SELECT Ename FROM emp WHERE Ename LIKE 'S%' AND length(Ename) = 5
+
+11.
+-->Select * from emp where Empno not like '78%'
+
+12.
+-->Select * from emp where Deptno='20' and Job ='CLERK' ;
+
+13.
+-->
+
+14.
+-->select Ename from emp where Deptno=20 and Job in ( select distinct Job from emp where Deptno=10)
+
+15.
+-->Select distinct * from emp where Sal in(select Sal from emp where Ename in ('FORD','SMITH'))
+and Ename not in ('FORD','SMITH') Order By Sal Desc ;
+
+16.
+-->SELECT * FROM emp WHERE Job IN(SELECT Job FROM emp WHERE Ename IN('SMITH','ALLEN'))
+ AND Ename NOT IN('SMITH','ALLEN')
+
+17.
+-->SELECT * FROM emp WHERE Deptno=20 AND Job IN(SELECT Job FROM emp WHERE Deptno=10)
+
+18.
+-->
+
+19.
+-->SELECT * FROM emp WHERE Sal IN (SELECT max(Sal) FROM emp);
+
+20.
+-->SELECT SUM(Sal) FROM emp WHERE Job='MANAGER'
+
+21.
+-->SELECT * FROM emp WHERE Ename LIKE '%A%'
+
+22.
+-->SELECT * FROM emp WHERE Sal IN (SELECT MIN(Sal) FROM emp GROUP BY Job)
+ ORDER BY Sal ASC
+
+23.
+-->SELECT * FROM emp WHERE Sal>(SELECT Sal FROM emp WHERE Ename='BLAKE')
+
+24.
+-->SELECT Ename, Deptno, Job FROM emp WHERE Deptno = (SELECT Deptno FROM dept WHERE loc = 'NEW YORK')
+
+25.
+-->
+
+26.
+-->ALTER TABLE student ADD Pin bigint
